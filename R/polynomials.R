@@ -14,10 +14,10 @@ NULL
 #" polynomial_at(p, c(1, 2))
 #" # should be 10, 49
 polynomial_at<-function(p, x){
-  if (length(x) == 1)
-    return(.jcall("jdplus/toolkitx/base/r/Polynomials", "D", "evaluate", .jarray(as.numeric(p)), as.numeric(x)))
-  else
-    return(.jcall("jdplus/toolkitx/base/r/Polynomials", "[D", "evaluate", .jarray(as.numeric(p)), .jarray(as.numeric(x))))
+    if (length(x) == 1)
+        return(.jcall("jdplus/toolkitx/base/r/Polynomials", "D", "evaluate", .jarray(as.numeric(p)), as.numeric(x)))
+    else
+        return(.jcall("jdplus/toolkitx/base/r/Polynomials", "[D", "evaluate", .jarray(as.numeric(p)), .jarray(as.numeric(x))))
 }
 
 #" Computes the roots of a real polynomial
@@ -32,10 +32,10 @@ polynomial_at<-function(p, x){
 #" p<-c(1,2,3,4)
 #" polynomial_roots(p, TRUE)
 polynomial_roots<-function(p, robust=FALSE){
-  jc<-.jcall("jdplus/toolkitx/base/r/Polynomials", "Ljdplus/toolkit/base/api/math/matrices/Matrix;", "roots",
-         .jarray(as.numeric(p)), as.logical(robust))
-  r<-rjd3toolkit::.jd2r_matrix(jc)
-  return(complex(real=r[, 1], imaginary=r[, 2]))
+    jc<-.jcall("jdplus/toolkitx/base/r/Polynomials", "Ljdplus/toolkit/base/api/math/matrices/Matrix;", "roots",
+               .jarray(as.numeric(p)), as.logical(robust))
+    r<-rjd3toolkit::.jd2r_matrix(jc)
+    return(complex(real=r[, 1], imaginary=r[, 2]))
 }
 
 #" Creates a polynomial from an array of complexes (roots of the result)
@@ -53,10 +53,10 @@ polynomial_roots<-function(p, robust=FALSE){
 #" q<-polynomial_roots(p)
 #" polynomial_of_roots(q, reorder=TRUE)
 polynomial_of_roots<-function(roots, p0=1, smooth=TRUE, reorder=FALSE){
-  M<-cbind(sapply(roots, function(z)Re(z)), sapply(roots, function(z)Im(z)))
-  jM<-rjd3toolkit::.r2jd_matrix(M)
-  return(.jcall("jdplus/toolkitx/base/r/Polynomials", "[D",
-                 "polynomialOfRoots", jM, as.numeric(p0), as.logical(smooth), as.logical(reorder)))
+    M<-cbind(sapply(roots, function(z)Re(z)), sapply(roots, function(z)Im(z)))
+    jM<-rjd3toolkit::.r2jd_matrix(M)
+    return(.jcall("jdplus/toolkitx/base/r/Polynomials", "[D",
+                  "polynomialOfRoots", jM, as.numeric(p0), as.logical(smooth), as.logical(reorder)))
 }
 
 #" Convolution of a given polynomial (=P(x)*P(1/x))
@@ -70,6 +70,6 @@ polynomial_of_roots<-function(roots, p0=1, smooth=TRUE, reorder=FALSE){
 #" p<-c(1,2,3,4)
 #" polynomial_convolve(p)
 polynomial_convolve<-function(p){
-  c<-.jcall("jdplus/toolkitx/base/r/Polynomials", "[D", "convolve", .jarray(as.numeric(p)))
-  return(c)
+    c<-.jcall("jdplus/toolkitx/base/r/Polynomials", "[D", "convolve", .jarray(as.numeric(p)))
+    return(c)
 }
