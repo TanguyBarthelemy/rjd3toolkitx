@@ -41,7 +41,7 @@ NULL
 #' bphi = NULL,
 #' bd = 0,
 #' btheta = -.7
-#')
+#' )
 #'
 #' ac<-arima_acf(model, 120)
 arima_acf<-function(model, n){
@@ -69,7 +69,7 @@ arima_acf<-function(model, n){
 #' bphi = NULL,
 #' bd = 0,
 #' btheta = -.7
-#')
+#' )
 #'
 #' psi<-arima_psi_weights(model, 120)
 arima_psi_weights<-function(model, n){
@@ -97,7 +97,7 @@ arima_psi_weights<-function(model, n){
 #' bphi = NULL,
 #' bd = 0,
 #' btheta = -.7
-#')
+#' )
 #'
 #' pi<-arima_pi_weights(model, 120)
 arima_pi_weights<-function(model, n){
@@ -129,7 +129,7 @@ arima_pi_weights<-function(model, n){
 #' bphi = NULL,
 #' bd = 1,
 #' btheta = -.7
-#')
+#' )
 #'
 #' s<-arima_extends_fast(rjd3toolkit::ABS$X0.2.09.10.M, model, nbcasts=24, nfcasts = 60)
 arima_extends_fast<-function(data, model, mean=0, nbcasts=0, nfcasts=0){
@@ -163,7 +163,7 @@ arima_extends_fast<-function(data, model, mean=0, nbcasts=0, nfcasts=0){
 #' bphi = NULL,
 #' bd = 1,
 #' btheta = -.7
-#')
+#' )
 #'
 #' s<-arima_extends_exact(rjd3toolkit::ABS$X0.2.09.10.M, model, nbcasts=24, nfcasts = 60)
 #' plot(s, type="l")
