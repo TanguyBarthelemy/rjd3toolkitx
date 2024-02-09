@@ -3,13 +3,13 @@ NULL
 
 .jd3_arima<-function(model){
   if (inherits(model, "JD3_ARIMA")){
-    return (.jcall("jdplus/toolkit/base/r/arima/ArimaModels", "Ljdplus/toolkit/base/core/arima/ArimaModel;", "of",
+    return(.jcall("jdplus/toolkit/base/r/arima/ArimaModels", "Ljdplus/toolkit/base/core/arima/ArimaModel;", "of",
                    .jarray(as.numeric(model$ar)),
                    .jarray(as.numeric(model$delta)),
                    .jarray(as.numeric(model$ma)),
                    as.numeric(model$var), FALSE))
   }else if (inherits(model, "JD3_SARIMA")){
-    return (.jcall("jdplus/toolkit/base/r/arima/SarimaModels", "Ljdplus/toolkit/base/core/sarima/SarimaModel;", "of",
+    return(.jcall("jdplus/toolkit/base/r/arima/SarimaModels", "Ljdplus/toolkit/base/core/sarima/SarimaModel;", "of",
                    as.integer(model$period),
                    .jarray(as.numeric(model$phi)),
                    as.integer(model$d),
@@ -46,7 +46,7 @@ NULL
 #" ac<-arima_acf(model, 120)
 arima_acf<-function(model, n){
   jarima<-.jd3_arima(model)
-  return (.jcall("jdplus/toolkitx/base/r/ArimaModels", "[D", "acf",
+  return(.jcall("jdplus/toolkitx/base/r/ArimaModels", "[D", "acf",
                  .jcast(jarima, "jdplus/toolkit/base/core/arima/IArimaModel"), as.integer(n)))
 }
 
@@ -74,7 +74,7 @@ arima_acf<-function(model, n){
 #" psi<-arima_psi_weights(model, 120)
 arima_psi_weights<-function(model, n){
   jarima<-.jd3_arima(model)
-  return (.jcall("jdplus/toolkitx/base/r/ArimaModels", "[D", "psi",
+  return(.jcall("jdplus/toolkitx/base/r/ArimaModels", "[D", "psi",
                  .jcast(jarima, "jdplus/toolkit/base/core/arima/IArimaModel"), as.integer(n)))
 }
 
@@ -102,7 +102,7 @@ arima_psi_weights<-function(model, n){
 #" pi<-arima_pi_weights(model, 120)
 arima_pi_weights<-function(model, n){
   jarima<-.jd3_arima(model)
-  return (.jcall("jdplus/toolkitx/base/r/ArimaModels", "[D", "pi",
+  return(.jcall("jdplus/toolkitx/base/r/ArimaModels", "[D", "pi",
                  .jcast(jarima, "jdplus/toolkit/base/core/arima/IArimaModel"), as.integer(n)))
 }
 
@@ -134,7 +134,7 @@ arima_pi_weights<-function(model, n){
 #" s<-arima_extends_fast(rjd3toolkit::ABS$X0.2.09.10.M, model, nbcasts=24, nfcasts = 60)
 arima_extends_fast<-function(data, model, mean=0, nbcasts=0, nfcasts=0){
   jarima<-.jd3_arima(model)
-  return (.jcall("jdplus/toolkitx/base/r/ArimaModels", "[D", "extendsFast", as.numeric(data),
+  return(.jcall("jdplus/toolkitx/base/r/ArimaModels", "[D", "extendsFast", as.numeric(data),
                  .jcast(jarima, "jdplus/toolkit/base/core/arima/IArimaModel"),
                  as.numeric(mean), as.integer(nbcasts), as.integer(nfcasts)))
 
@@ -169,7 +169,7 @@ arima_extends_fast<-function(data, model, mean=0, nbcasts=0, nfcasts=0){
 #" plot(s, type="l")
 arima_extends_exact<-function(data, model, mean=FALSE, nbcasts=0, nfcasts=0){
   jarima<-.jd3_arima(model)
-  return (.jcall("jdplus/toolkitx/base/r/ArimaModels", "[D", "extendsExact", as.numeric(data),
+  return(.jcall("jdplus/toolkitx/base/r/ArimaModels", "[D", "extendsExact", as.numeric(data),
                  .jcast(jarima, "jdplus/toolkit/base/core/arima/IArimaModel"),
                  as.logical(mean), as.integer(nbcasts), as.integer(nfcasts)))
 
