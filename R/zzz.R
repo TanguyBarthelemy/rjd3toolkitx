@@ -10,4 +10,3 @@ NULL
   # reload extractors
   # rjd3toolkit::reload_dictionaries()
 }
-

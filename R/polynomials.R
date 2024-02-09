@@ -35,7 +35,7 @@ polynomial_roots<-function(p, robust=FALSE){
   jc<-.jcall('jdplus/toolkitx/base/r/Polynomials', 'Ljdplus/toolkit/base/api/math/matrices/Matrix;', 'roots',
          .jarray(as.numeric(p)), as.logical(robust))
   r<-rjd3toolkit::.jd2r_matrix(jc)
-  return (complex(real=r[,1], imaginary=r[,2]))
+  return (complex(real=r[, 1], imaginary=r[, 2]))
 }
 
 #' Creates a polynomial from an array of complexes (roots of the result)
@@ -70,6 +70,6 @@ polynomial_of_roots<-function(roots, p0=1, smooth=TRUE, reorder=FALSE){
 #' p<-c(1,2,3,4)
 #' polynomial_convolve(p)
 polynomial_convolve<-function(p){
-  c<-.jcall('jdplus/toolkitx/base/r/Polynomials', '[D', 'convolve',.jarray(as.numeric(p)))
+  c<-.jcall('jdplus/toolkitx/base/r/Polynomials', '[D', 'convolve', .jarray(as.numeric(p)))
   return (c)
 }
