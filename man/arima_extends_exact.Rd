@@ -38,5 +38,5 @@ btheta = -.7
 )
 
 s<-arima_extends_exact(rjd3toolkit::ABS$X0.2.09.10.M, model, nbcasts=24, nfcasts = 60)
-plot(s, type='l')
+plot(s, type="l")
 }
