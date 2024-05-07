@@ -8,7 +8,7 @@ NULL
                       .jarray(as.numeric(model$delta)),
                       .jarray(as.numeric(model$ma)),
                       as.numeric(model$var), FALSE))
-    }else if (inherits(model, "JD3_SARIMA")){
+    } else if (inherits(model, "JD3_SARIMA")){
         return(.jcall("jdplus/toolkit/base/r/arima/SarimaModels", "Ljdplus/toolkit/base/core/sarima/SarimaModel;", "of",
                       as.integer(model$period),
                       .jarray(as.numeric(model$phi)),
@@ -17,7 +17,7 @@ NULL
                       .jarray(as.numeric(model$bphi)),
                       as.integer(model$bd),
                       .jarray(as.numeric(model$btheta))))
-    }else{
+    } else{
         stop("Invalid model")
     }
 }
