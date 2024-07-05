@@ -17,7 +17,7 @@ NULL
                       .jarray(as.numeric(model$bphi)),
                       as.integer(model$bd),
                       .jarray(as.numeric(model$btheta))))
-    } else{
+    } else {
         stop("Invalid model")
     }
 }
