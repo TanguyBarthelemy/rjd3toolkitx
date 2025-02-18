@@ -1,7 +1,7 @@
 Package: rjd3toolkitx
 Type: Package
 Title: Advanced functions of 'JDemetra+ 3.0'
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: c(
   person("Jean", "Palate", role = c("aut", "cre"),
                 email = "jean.palate@nbb.be"))
@@ -10,17 +10,24 @@ Depends:
   R (>= 3.6.0)
 Imports:
   rJava (>= 1.0-6),
-  rjd3toolkit (>= 3.2.1)
+  rjd3toolkit (>= 3.3.1),
+  rjd3sts (>= 2.2.1)
 Remotes:
   github::rjdverse/rjd3toolkit
 SystemRequirements: Java (>= 17)
 License: EUPL
+<<<<<<< HEAD
 RoxygenNote: 7.3.1
+=======
+RoxygenNote: 7.3.2
+>>>>>>> 447bd9030a25948d35e125996ac79cfb9730cc5f
 Roxygen: list(markdown = TRUE)
 BugReports: https://github.com/rjdverse/rjd3tramoseats/issues
 Encoding: UTF-8
 Collate: 
+    'utils.R'
+    'adaptivesplines.R'
     'arima.R'
     'polynomials.R'
-    'utils.R'
+    'tdarima.R'
     'zzz.R'
