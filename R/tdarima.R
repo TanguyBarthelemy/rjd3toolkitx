@@ -121,6 +121,3 @@ ltd_airline<-function(name, length, period, th0=-.6, th1=-.6, bth0=-.6, bth1=-.6
                 as.integer(length), as.integer(period), th0, th1, bth0, bth1, fixedth, variance, fixedvariance)
   return(rjd3toolkit::.jd3_object(jrslt, STATEBLOCK))
 }
-
-
-

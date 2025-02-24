@@ -22,6 +22,7 @@ linters: linters_with_defaults(
         cyclocomp_linter = NULL,
         object_usage_linter = NULL,
         object_name_linter = NULL,
-        commented_code_linter = NULL
+        commented_code_linter = NULL,
+        return_linter = NULL
     )
 encoding: "UTF-8"

@@ -67,8 +67,7 @@ periodic_adaptive_splines<-function(x, y, period, nknots, knots=NULL, order=4, m
   }
   jrslt<-.jcall('jdplus/toolkitx/base/r/AdaptivePeriodicSplines', 'Ljdplus/toolkitx/base/r/AdaptivePeriodicSplines$AdaptivePSplines;', 'asplines',
                 as.numeric(x), as.numeric(y), as.numeric(knots), as.numeric(period), as.integer(order), as.integer(maxiter),
-                as.numeric(precision), as.numeric(threshold), as.numeric(lambda0), as.numeric(lambda1), as.numeric(dlambda), as.integer(minKnots), as.character(criterion) )
+                as.numeric(precision), as.numeric(threshold), as.numeric(lambda0), as.numeric(lambda1), as.numeric(dlambda), as.integer(minKnots), as.character(criterion))
   return(rjd3toolkit::.jd3_object(jrslt, APSPLINES, TRUE))
 
 }
-
